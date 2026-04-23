@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+build
+.env
+.env.local
+.env*.local
+*.log
+.DS_Store
+.vscode
+.claude
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# Source staging (61MB) — raw originals, already copied into public/
+assets
+
