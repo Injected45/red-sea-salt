@@ -113,10 +113,10 @@ export default function Hero() {
       />
 
       <div
-        className="container relative z-10 mx-auto grid gap-10 py-16 sm:py-20 md:gap-12 md:py-24 lg:grid-cols-12 lg:items-center lg:py-32"
+        className="container relative z-10 mx-auto grid gap-10 py-12 sm:py-20 md:gap-12 md:py-24 lg:grid-cols-12 lg:items-center lg:py-32"
         style={scrollParallax(0.1)}
       >
-        <div className="lg:col-span-7">
+        <div className="min-w-0 lg:col-span-7">
           <p className="eyebrow !text-accent-light animate-fade-in" style={{ animationDelay: '100ms' }}>
             {t('eyebrow')}
           </p>
@@ -135,8 +135,8 @@ export default function Hero() {
             ))}
           </h1>
           <p
-            className="mt-5 max-w-xl text-[13px] leading-relaxed text-brand-100/90 sm:text-sm md:mt-7 md:text-base lg:text-lg animate-fade-up"
-            style={{ animationDelay: '400ms' }}
+            className="mt-5 max-w-full break-words text-[13px] leading-relaxed text-brand-100/90 sm:max-w-xl sm:text-sm md:mt-7 md:text-base lg:text-lg animate-fade-up"
+            style={{ animationDelay: '400ms', overflowWrap: 'anywhere' }}
           >
             {t('subtitle')}
           </p>
@@ -182,7 +182,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md lg:col-span-5 lg:mx-0 lg:max-w-none" style={parallax(14)}>
+        <div className="relative mx-auto hidden w-full max-w-md md:block lg:col-span-5 lg:mx-0 lg:max-w-none" style={parallax(14)}>
           <div className="relative">
             <div
               className="absolute -inset-4 rounded-[32px] bg-gradient-to-br from-accent/30 via-brand-500/20 to-transparent blur-2xl md:-inset-6"
@@ -206,7 +206,7 @@ export default function Hero() {
                     {t('locationLabel')}
                   </p>
                   <p className="mt-1 font-display text-xl md:mt-2 md:text-2xl">
-                    Ras Gharib · <span className="italic text-accent-light">Red Sea</span>
+                    Egypt · <span className="italic text-accent-light">Salt Works</span>
                   </p>
                 </div>
               </div>
