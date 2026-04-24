@@ -29,8 +29,8 @@ export default function AboutPreview() {
             <div className="hidden items-center gap-3 sm:flex">
               <div className="h-10 w-10 rounded-full border border-brand-200 bg-ivory-100" />
               <p className="text-xs leading-tight text-brand-700">
-                <span className="block font-semibold text-brand-900">2011 · Est.</span>
-                Ras Gharib, EG
+                <span className="block font-semibold text-brand-900">{t('badgeLabel')}</span>
+                {t('badgeLocation')}
               </p>
             </div>
           </div>
@@ -46,8 +46,8 @@ export default function AboutPreview() {
               <div className="space-y-4">
                 <div className="overflow-hidden rounded-2xl">
                   <img
-                    src="/placeholder.svg"
-                    alt=""
+                    src="/about/production.jpg"
+                    alt="Salt production"
                     loading="lazy"
                     className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
                   />
@@ -57,26 +57,27 @@ export default function AboutPreview() {
                     14<span className="text-accent">+</span>
                   </div>
                   <div className="mt-1 text-xs uppercase tracking-widest text-brand-700">
-                    Years of expertise
+                    {t('badgeLabel')}
                   </div>
                 </div>
               </div>
               <div className="mt-10 space-y-4">
                 <div className="rounded-2xl bg-brand-900 p-6 text-white">
                   <div className="text-[11px] uppercase tracking-[0.28em] text-accent-light">
-                    Origin
+                    {t('shippingTitle')}
                   </div>
                   <div className="mt-3 font-display text-2xl leading-tight">
-                    Ras Gharib · <span className="italic text-accent-light">Red Sea</span>
+                    {t('badgeLocation')}{' '}
+                    <span className="italic text-accent-light">Ports</span>
                   </div>
                   <p className="mt-3 text-xs text-brand-100/80">
-                    Strategic location with direct sea & land access for regional export.
+                    {t('shippingBody')}
                   </p>
                 </div>
                 <div className="overflow-hidden rounded-2xl">
                   <img
-                    src="/placeholder.svg"
-                    alt=""
+                    src="/about/bulk-bag.webp"
+                    alt="Bulk-bag packaging ready for export"
                     loading="lazy"
                     className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
                   />

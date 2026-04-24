@@ -3,6 +3,7 @@ export type ProductSlug =
   | 'de-icing-rock-salt'
   | 'tablet-salt'
   | 'water-softener-salt'
+  | 'pool-salt'
   | 'industrial-salt'
   | 'food-grade-salt'
   | 'marine-salt';
@@ -100,12 +101,29 @@ const products: Product[] = [
       granule: 'Tablets / coarse granules',
       packaging: ['25 kg bags', '50 kg bags', 'Bulk'],
     },
-    image: '/products/water-softener-salt/ext-1.jpg',
-    gallery: ['/products/water-softener-salt/ext-1.jpg'],
+    image: '/products/water-softener-salt/ext-1.webp',
+    gallery: ['/products/water-softener-salt/ext-1.webp'],
     videos: [
       '/products/water-softener-salt/video-1.mp4',
       '/products/water-softener-salt/video-2.mp4',
       '/products/water-softener-salt/video-3.mp4',
+    ],
+  },
+  {
+    slug: 'pool-salt',
+    featured: true,
+    industries: ['pools', 'commercial'],
+    specs: {
+      purity: '99.5%+',
+      moisture: '≤ 0.2%',
+      granule: '1–3 mm',
+      packaging: ['25 kg bags', '50 kg bags', 'Bulk'],
+    },
+    image: '/placeholder.svg',
+    gallery: [],
+    videos: [
+      '/products/pool-salt/video-1.mp4',
+      '/products/pool-salt/video-2.mp4',
     ],
   },
   {
@@ -137,8 +155,15 @@ const products: Product[] = [
       packaging: ['25 kg bags', '50 kg bags', 'Retail packaging'],
     },
     image: '/products/food-grade-salt/1.jpg',
-    gallery: ['/products/food-grade-salt/1.jpg'],
-    videos: ['/products/food-grade-salt/video.mp4'],
+    gallery: [
+      '/products/food-grade-salt/1.jpg',
+      '/products/food-grade-salt/2.jpg',
+      '/products/food-grade-salt/3.jpg',
+    ],
+    videos: [
+      '/products/food-grade-salt/video-1.mp4',
+      '/products/food-grade-salt/video-2.mp4',
+    ],
   },
   {
     slug: 'marine-salt',

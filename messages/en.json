@@ -26,9 +26,9 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Est. 2011 — Ras Gharib",
-      "title": "Pure salt from the heart of the Red Sea",
-      "subtitle": "Egyptian producer of high-grade industrial salt with proven capacity, serving local and international markets since 2011.",
+      "eyebrow": "Est. 2011 — Egypt",
+      "title": "Pure Egyptian salt for global markets",
+      "subtitle": "Producer of high-grade industrial and food salt with proven capacity, shipping from every major Egyptian port through our trusted partners since 2011.",
       "ctaPrimary": "Explore products",
       "ctaSecondary": "Contact us",
       "trustedBy": "Serving sectors across the region",
@@ -55,8 +55,12 @@
     "about": {
       "eyebrow": "About us",
       "title": "Over a decade of proven experience",
-      "body": "Since 2011 we have produced premium industrial salt from Ras Gharib on the Red Sea coast, offering integrated supply solutions to industrial, food and infrastructure sectors.",
-      "cta": "Get to know us"
+      "body": "Since 2011 we have produced premium industrial and food-grade salt across multiple Egyptian sites. We ship from every major Egyptian port through our trusted logistics partners — serving industrial, food and infrastructure buyers across the region.",
+      "cta": "Get to know us",
+      "shippingTitle": "Shipping across Egypt",
+      "shippingBody": "We're not limited to the Red Sea — our trusted partners handle loading and export from every major Egyptian port.",
+      "badgeLabel": "Est. 2011",
+      "badgeLocation": "Egypt"
     },
     "categories": {
       "eyebrow": "Our products",
@@ -247,6 +251,19 @@
           "Packaged in 10 kg and 25 kg bags"
         ],
         "applications": ["Water softening systems", "Industrial water treatment", "Commercial boilers", "Residential use"]
+      },
+      "pool-salt": {
+        "name": "Pool Salt",
+        "short": "High-purity salt for saltwater chlorination pool systems.",
+        "description": "Pool salt is pharmaceutical-grade sodium chloride designed specifically for saltwater chlorination systems. Unlike common salt, it contains no anti-caking agents, iodine, or additives that would stain pool surfaces or disrupt generator cells. It dissolves quickly and feeds the chlorine generator to produce a gentle, spa-like chlorinated water that is softer on skin and eyes than traditional chlorine.",
+        "keyFeatures": [
+          "≥ 99.5% pure sodium chloride — no additives",
+          "Free from iodine, anti-caking agents, and binders",
+          "Fast, residue-free dissolution",
+          "Compatible with all major saltwater chlorinators",
+          "Gentle on skin, eyes, hair, and pool equipment"
+        ],
+        "applications": ["Residential pools", "Commercial pools", "Hotels and resorts", "Sports clubs"]
       },
       "water-softener-salt": {
         "name": "Water Softener Salt",

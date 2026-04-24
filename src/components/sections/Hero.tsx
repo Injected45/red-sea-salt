@@ -121,7 +121,7 @@ export default function Hero() {
             {t('eyebrow')}
           </p>
           <h1
-            className="mt-5 font-display text-[2.25rem] font-semibold leading-[1.08] tracking-tight text-balance sm:text-5xl md:text-6xl lg:text-7xl animate-fade-up"
+            className="mt-5 font-display text-[1.75rem] font-semibold leading-[1.1] tracking-tight text-balance break-words sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl animate-fade-up"
             style={{ animationDelay: '200ms' }}
           >
             {t('title').split(' ').map((word, i, arr) => (
@@ -135,7 +135,7 @@ export default function Hero() {
             ))}
           </h1>
           <p
-            className="mt-6 max-w-xl text-sm leading-relaxed text-brand-100/90 sm:text-base md:mt-8 md:text-lg animate-fade-up"
+            className="mt-5 max-w-xl text-[13px] leading-relaxed text-brand-100/90 sm:text-sm md:mt-7 md:text-base lg:text-lg animate-fade-up"
             style={{ animationDelay: '400ms' }}
           >
             {t('subtitle')}
