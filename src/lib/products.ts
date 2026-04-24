@@ -119,8 +119,8 @@ const products: Product[] = [
       granule: '1–3 mm',
       packaging: ['25 kg bags', '50 kg bags', 'Bulk'],
     },
-    image: '/placeholder.svg',
-    gallery: [],
+    image: '/products/pool-salt/1.jpg',
+    gallery: ['/products/pool-salt/1.jpg'],
     videos: [
       '/products/pool-salt/video-1.mp4',
       '/products/pool-salt/video-2.mp4',
