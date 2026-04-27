@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../.next-internal/server/app/%5Blocale%5D/contact/page/actions.js%20%28server%20actions%20loader%29"],"sourcesContent":["export {submitContact as '4007a9bc202284c9f35c6a4529384a56c7c6504e48'} from 'ACTIONS_MODULE0'\n"],"names":[],"mappings":"sCAAA,IAAA,EAAA,EAAA,CAAA,CAAA"}

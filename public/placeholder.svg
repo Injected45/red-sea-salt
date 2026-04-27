@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef3f6"/>
+      <stop offset="100%" stop-color="#d7e2ea"/>
+    </linearGradient>
+    <pattern id="wave" width="120" height="60" patternUnits="userSpaceOnUse">
+      <path d="M0 30 Q 30 0 60 30 T 120 30" stroke="#9fb4c2" stroke-width="1.2" fill="none" opacity="0.35"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#wave)"/>
+  <g fill="#2f6f97" opacity="0.22">
+    <circle cx="260" cy="620" r="36"/>
+    <circle cx="340" cy="680" r="22"/>
+    <circle cx="900" cy="280" r="54"/>
+    <circle cx="980" cy="340" r="28"/>
+  </g>
+  <g fill="#1f3a54" font-family="Georgia, 'Times New Roman', serif">
+    <text x="600" y="430" text-anchor="middle" font-size="74" font-weight="700" letter-spacing="2">Red Sea Salt</text>
+    <text x="600" y="500" text-anchor="middle" font-size="28" letter-spacing="6" opacity="0.7">IMAGE COMING SOON</text>
+  </g>
+</svg>

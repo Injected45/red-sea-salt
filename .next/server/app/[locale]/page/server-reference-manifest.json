@@ -1,0 +1,41 @@
+{
+  "node": {
+    "40e31ab6094e1ef4c2f9ed4729d45fdbd81b2ae76e": {
+      "workers": {
+        "app/[locale]/page": {
+          "moduleId": 91623,
+          "async": false,
+          "exportedName": "submitTestimonial",
+          "filename": "src/app/actions/submissions.ts"
+        }
+      },
+      "exportedName": "submitTestimonial",
+      "filename": "src/app/actions/submissions.ts"
+    },
+    "4007a9bc202284c9f35c6a4529384a56c7c6504e48": {
+      "workers": {
+        "app/[locale]/page": {
+          "moduleId": 91623,
+          "async": false,
+          "exportedName": "submitContact",
+          "filename": "src/app/actions/submissions.ts"
+        }
+      },
+      "exportedName": "submitContact",
+      "filename": "src/app/actions/submissions.ts"
+    },
+    "4072dd63505ccd8f66e4519c603134a22dce1a3676": {
+      "workers": {
+        "app/[locale]/page": {
+          "moduleId": 91623,
+          "async": false,
+          "exportedName": "listApprovedTestimonials",
+          "filename": "src/app/actions/submissions.ts"
+        }
+      },
+      "exportedName": "listApprovedTestimonials",
+      "filename": "src/app/actions/submissions.ts"
+    }
+  },
+  "edge": {}
+}

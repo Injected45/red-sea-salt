@@ -1,0 +1,13 @@
+{
+  "/[locale]/about/page": "/[locale]/about",
+  "/[locale]/contact/page": "/[locale]/contact",
+  "/[locale]/faq/page": "/[locale]/faq",
+  "/[locale]/industries/page": "/[locale]/industries",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/products/[slug]/page": "/[locale]/products/[slug]",
+  "/[locale]/products/page": "/[locale]/products",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml"
+}

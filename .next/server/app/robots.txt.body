@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://redseasalt.example
+Sitemap: https://redseasalt.example/sitemap.xml
