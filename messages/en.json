@@ -28,7 +28,7 @@
     "hero": {
       "eyebrow": "Est. 2011 · Egypt",
       "title": "Pure Egyptian salt for global markets",
-      "subtitle": "Producer of industrial and food-grade salt since 2011. We ship from every major Egyptian port through our trusted partners.",
+      "subtitle": "Producer of industrial salt, food-grade salt, de-icing salt and Siwa salt since 2011. We ship from every major Egyptian port through our trusted partners.",
       "ctaPrimary": "Explore products",
       "ctaSecondary": "Contact us",
       "trustedBy": "Serving sectors across the region",
@@ -55,7 +55,7 @@
     "about": {
       "eyebrow": "About us",
       "title": "Over a decade of proven experience",
-      "body": "Since 2011 we have produced premium industrial and food-grade salt across multiple Egyptian sites. We ship from every major Egyptian port through our trusted logistics partners — serving industrial, food and infrastructure buyers across the region.",
+      "body": "Since 2011 we have produced premium industrial salt, food-grade salt, de-icing rock salt and Siwa salt across multiple Egyptian sites. We ship from every major Egyptian port through our trusted logistics partners — serving industrial, food and infrastructure buyers across the region.",
       "cta": "Get to know us",
       "shippingTitle": "Shipping across Egypt",
       "shippingBody": "We're not limited to the Red Sea — our trusted partners handle loading and export from every major Egyptian port.",
@@ -218,11 +218,12 @@
         "short": "Natural solar and rock salt crystals in bulk for industrial use.",
         "description": "Natural solar and rock salt crystals harvested from our Red Sea salt fields and exported in bulk for industrial use or as a base material for further refining. Retains its natural mineral profile and some moisture, making it an ideal feedstock for downstream processing.",
         "keyFeatures": [
-          "Naturally harvested from the Red Sea coast",
+          "Naturally harvested from Egyptian land",
           "Rich in native minerals",
           "Ideal feedstock for refining and chemical processes",
           "Available in large, export-ready volumes",
-          "Consistent, traceable supply year-round"
+          "Consistent, traceable supply year-round",
+          "ISO 9001:2015 certified production"
         ],
         "applications": ["Chemical feedstock", "Bulk export", "Salt refining", "Industrial processes"]
       },
@@ -235,7 +236,8 @@
           "Fast, reliable ice and snow melt",
           "Durable under traffic and abrasion",
           "Compatible with standard spreading equipment",
-          "Supplied in bulk and 1-ton big bags"
+          "Supplied in bulk and 1-ton big bags",
+          "ISO 9001:2015 certified production"
         ],
         "applications": ["Highways", "Airport runways", "Bridges and overpasses", "Industrial yards"]
       },
@@ -248,7 +250,8 @@
           "Uniform tablet shape — no fines or dust",
           "Even, predictable dissolution",
           "Prevents bridging and clogging",
-          "Packaged in 10 kg and 25 kg bags"
+          "Packaged in 10 kg and 25 kg bags",
+          "ISO 9001:2015 certified production"
         ],
         "applications": ["Water softening systems", "Industrial water treatment", "Commercial boilers", "Residential use"]
       },
@@ -261,7 +264,8 @@
           "Free from iodine, anti-caking agents, and binders",
           "Fast, residue-free dissolution",
           "Compatible with all major saltwater chlorinators",
-          "Gentle on skin, eyes, hair, and pool equipment"
+          "Gentle on skin, eyes, hair, and pool equipment",
+          "ISO 9001:2015 certified production"
         ],
         "applications": ["Residential pools", "Commercial pools", "Hotels and resorts", "Sports clubs"]
       },
@@ -274,7 +278,8 @@
           "High solubility and low insolubles",
           "Tablet and granular formats available",
           "Protects boilers, appliances and pipes",
-          "Consistent performance across regeneration cycles"
+          "Consistent performance across regeneration cycles",
+          "ISO 9001:2015 certified production"
         ],
         "applications": ["Home softeners", "Commercial softeners", "Industrial water treatment", "HVAC and boilers"]
       },
@@ -287,7 +292,8 @@
           "Low moisture for reliable handling",
           "Meets common industrial specifications",
           "Available in bulk, bags and big bags",
-          "Backed by on-demand lab analysis"
+          "Backed by on-demand lab analysis",
+          "ISO 9001:2015 certified production"
         ],
         "applications": ["Chemical industry", "Textile dyeing", "Leather tanning", "Soap and detergents"]
       },
@@ -300,7 +306,8 @@
           "Iodized (fortified with potassium iodate)",
           "Free from heavy metals and contaminants",
           "Fine, uniform food-grade granulation",
-          "Available in retail and bulk packaging"
+          "Available in retail and bulk packaging",
+          "ISO 22000:2018 certified food-safety management"
         ],
         "applications": ["Food manufacturers", "Packaged retail salt", "Restaurants and hotels", "Household use"]
       },
@@ -313,7 +320,8 @@
           "Rich natural mineral profile",
           "Clean, bright crystal structure",
           "Suitable for industrial and premium food use",
-          "Washed and graded on site"
+          "Washed and graded on site",
+          "ISO 9001:2015 certified production"
         ],
         "applications": ["Premium food brands", "Gourmet retail", "Industrial use", "Export markets"]
       }

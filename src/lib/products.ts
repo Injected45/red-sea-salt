@@ -58,19 +58,22 @@ const products: Product[] = [
     featured: true,
     industries: ['road-deicing'],
     specs: {
-      purity: '95%+',
-      moisture: '≤ 3%',
-      granule: '2–10 mm (coarse)',
+      purity: '97 - 99%+',
+      moisture: '≤ 1.5%',
+      granule: '0–12 mm (coarse)',
       packaging: ['Bulk', '25 kg bags', '1 ton big bags'],
     },
     image: '/products/de-icing-rock-salt/a1.jpg',
     gallery: [
       '/products/de-icing-rock-salt/a1.jpg',
-      '/products/de-icing-rock-salt/a2.jpg',
-      '/products/de-icing-rock-salt/a3.png',
+      '/products/de-icing-rock-salt/b1.jpeg',
+      '/products/de-icing-rock-salt/b2.jpeg',
     ],
-    videos: ['/products/de-icing-rock-salt/video.mp4'],
-    analysisImage: '/products/de-icing-rock-salt/analysis.jpeg',
+    videos: [
+      '/products/de-icing-rock-salt/video.mp4',
+      '/products/de-icing-rock-salt/video-2.mp4',
+      '/products/de-icing-rock-salt/video-3.mp4',
+    ],
   },
   {
     slug: 'tablet-salt',
@@ -80,7 +83,7 @@ const products: Product[] = [
       purity: '99.8%+',
       moisture: '≤ 0.1%',
       granule: 'Pillow / round tablet — 25 mm',
-      packaging: ['10 kg bags', '25 kg bags'],
+      packaging: ['10 kg bags', '25 kg bags' , '1 ton big bags'],
     },
     image: '/products/tablet-salt/a1.jpg',
     gallery: [
@@ -89,7 +92,10 @@ const products: Product[] = [
       '/products/tablet-salt/a3.jpg',
       '/products/tablet-salt/a4.jpg',
     ],
-    videos: ['/products/tablet-salt/video.mp4'],
+    videos: [
+      '/products/tablet-salt/video-1.mp4',
+      '/products/tablet-salt/video-2.mp4',
+    ],
   },
   {
     slug: 'water-softener-salt',
@@ -121,10 +127,7 @@ const products: Product[] = [
     },
     image: '/products/pool-salt/1.jpg',
     gallery: ['/products/pool-salt/1.jpg'],
-    videos: [
-      '/products/pool-salt/video-1.mp4',
-      '/products/pool-salt/video-2.mp4',
-    ],
+    videos: ['/products/pool-salt/video-2.mp4'],
   },
   {
     slug: 'industrial-salt',
@@ -134,7 +137,7 @@ const products: Product[] = [
       purity: '97–98%',
       moisture: '≤ 3%',
       granule: '1–5 mm',
-      packaging: ['Bulk', '50 kg bags', '1 ton big bags'],
+      packaging: ['Bulk', '50 kg bags'],
     },
     image: '/products/industrial-salt/1.webp',
     gallery: [
@@ -159,11 +162,9 @@ const products: Product[] = [
       '/products/food-grade-salt/1.jpg',
       '/products/food-grade-salt/2.jpg',
       '/products/food-grade-salt/3.jpg',
+      '/products/food-grade-salt/4.jpeg',
     ],
-    videos: [
-      '/products/food-grade-salt/video-1.mp4',
-      '/products/food-grade-salt/video-2.mp4',
-    ],
+    videos: [],
   },
   {
     slug: 'marine-salt',
@@ -185,7 +186,6 @@ const products: Product[] = [
       '/products/marine-salt/video-1.mp4',
       '/products/marine-salt/video-2.mp4',
     ],
-    analysisImage: '/products/marine-salt/analysis.jpeg',
   },
 ];
 
