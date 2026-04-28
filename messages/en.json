@@ -367,7 +367,8 @@
       "email": "Email",
       "hours": "Hours",
       "hoursValue": "Sunday – Thursday: 9am – 5pm",
-      "openMap": "Open in Google Maps"
+      "openMap": "Open in Google Maps",
+      "followUs": "Follow us"
     },
     "form": {
       "title": "Send us an inquiry",

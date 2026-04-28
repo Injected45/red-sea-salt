@@ -63,6 +63,36 @@ export default async function ContactPage({
               </svg>
               <span>{t('info.openMap')}</span>
             </a>
+
+            <div className="mt-8 border-t border-brand-100 pt-6">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-brand-500">
+                {t('info.followUs')}
+              </p>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.facebook.com/share/17zFSreD75/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-700 text-white transition hover:bg-accent-dark"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                    <path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2V11H7.5v3.1h2.6V22h3.4z" />
+                  </svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/hossam-salem-695852296"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-brand-700 text-white transition hover:bg-accent-dark"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+                    <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM8.5 18H6V10h2.5v8zM7.2 8.9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18 18h-2.5v-4c0-1-.4-1.6-1.3-1.6-.7 0-1.1.5-1.3 1-.1.2-.1.5-.1.7V18H10.3v-8h2.5v1.1c.3-.5 1-1.3 2.4-1.3 1.7 0 3 1.1 3 3.5V18z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
           <div className="lg:col-span-3">
             <div className="card">
