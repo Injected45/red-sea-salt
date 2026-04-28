@@ -46,7 +46,7 @@ export default function AboutPreview() {
               <div className="space-y-4">
                 <div className="overflow-hidden rounded-2xl">
                   <img
-                    src="/about/production.jpg"
+                    src="/about/production.jpeg"
                     alt="Salt production"
                     loading="lazy"
                     className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
