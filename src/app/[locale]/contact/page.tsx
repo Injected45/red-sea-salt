@@ -46,14 +46,14 @@ export default async function ContactPage({
             </div>
             <div className="mt-8 aspect-video overflow-hidden rounded-2xl border border-brand-100 bg-brand-50">
               <iframe
-                src="https://maps.google.com/maps?q=5667%2B684+Ras+Gharib+Red+Sea+Governorate+Egypt&output=embed"
+                src="https://maps.google.com/maps?q=28.1605118,33.2133238&z=16&output=embed"
                 className="h-full w-full"
                 loading="lazy"
                 title="Map"
               />
             </div>
             <a
-              href="https://maps.app.goo.gl/o6E3WWcYMaLw3AED6"
+              href="https://maps.app.goo.gl/eXnhFar8CeLEfFjs8"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-accent-dark"

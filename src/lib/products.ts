@@ -93,7 +93,7 @@ const products: Product[] = [
       '/products/tablet-salt/a4.jpg',
     ],
     videos: [
-      '/products/tablet-salt/video-1.mp4',
+      '/products/tablet-salt/video-3.mp4',
       '/products/tablet-salt/video-2.mp4',
     ],
   },
