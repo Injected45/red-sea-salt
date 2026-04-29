@@ -7,11 +7,18 @@ import ProductGallery from '@/components/ProductGallery';
 import { getProduct, getProductSlugs, getProducts } from '@/lib/products';
 import { routing } from '@/i18n/routing';
 
-export function generateStaticParams() {
-  const slugs = getProductSlugs();
-  return routing.locales.flatMap((locale) =>
-    slugs.map((slug) => ({ locale, slug }))
-  );
+export const revalidate = 60;
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  try {
+    const slugs = await getProductSlugs();
+    return routing.locales.flatMap((locale) =>
+      slugs.map((slug) => ({ locale, slug })),
+    );
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -20,7 +27,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const product = getProduct(slug);
+  const product = await getProduct(slug);
   if (!product) return {};
   const t = await getTranslations({ locale, namespace: `products.items.${slug}` });
   return {
@@ -39,7 +46,7 @@ export default async function ProductDetailPage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const product = getProduct(slug);
+  const product = await getProduct(slug);
   if (!product) notFound();
 
   const t = await getTranslations();
@@ -59,7 +66,7 @@ export default async function ProductDetailPage({
     manufacturer: { '@type': 'Organization', name: siteName },
   };
 
-  const related = getProducts().filter((p) => p.slug !== slug).slice(0, 3);
+  const related = (await getProducts()).filter((p) => p.slug !== slug).slice(0, 3);
   const gallery = product.gallery.length > 0 ? product.gallery : [product.image];
 
   return (

@@ -1,11 +1,11 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import Logo from '../Logo';
 import { getProducts } from '@/lib/products';
 
-export default function Footer() {
-  const t = useTranslations();
-  const products = getProducts();
+export default async function Footer() {
+  const t = await getTranslations();
+  const products = await getProducts();
   const year = new Date().getFullYear();
 
   return (

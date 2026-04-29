@@ -1,10 +1,11 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { getFeaturedProducts } from '@/lib/products';
 import ProductGrid from './ProductGrid';
 import Reveal from '../motion/Reveal';
 
-export default function FeaturedProducts() {
-  const t = useTranslations('home.featured');
+export default async function FeaturedProducts() {
+  const t = await getTranslations('home.featured');
+  const featured = await getFeaturedProducts();
 
   return (
     <section className="section">
@@ -23,7 +24,7 @@ export default function FeaturedProducts() {
           </div>
         </Reveal>
         <Reveal delay={150}>
-          <ProductGrid products={getFeaturedProducts()} limit={3} />
+          <ProductGrid products={featured} limit={3} />
         </Reveal>
       </div>
     </section>

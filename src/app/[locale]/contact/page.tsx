@@ -23,7 +23,7 @@ export default async function ContactPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('contact');
-  const products = getProducts();
+  const products = await getProducts();
   const productOptions = await Promise.all(
     products.map(async (p) => {
       const items = await getTranslations('products.items');

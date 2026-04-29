@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { getProducts, type Product } from '@/lib/products';
 
@@ -7,9 +7,10 @@ type Props = {
   limit?: number;
 };
 
-export default function ProductGrid({ products, limit }: Props) {
-  const t = useTranslations();
-  const items = (products ?? getProducts()).slice(0, limit);
+export default async function ProductGrid({ products, limit }: Props) {
+  const t = await getTranslations();
+  const source = products ?? (await getProducts());
+  const items = limit ? source.slice(0, limit) : source;
 
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

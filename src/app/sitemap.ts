@@ -6,9 +6,10 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://redseasalt.example'
 
 const staticPaths = ['', '/about', '/products', '/industries', '/contact', '/faq'];
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
   const entries: MetadataRoute.Sitemap = [];
+  const slugs = await getProductSlugs();
 
   for (const locale of routing.locales) {
     const prefix = locale === routing.defaultLocale ? '' : `/${locale}`;
@@ -20,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: path === '' ? 1.0 : 0.7,
       });
     }
-    for (const slug of getProductSlugs()) {
+    for (const slug of slugs) {
       entries.push({
         url: `${baseUrl}${prefix}/products/${slug}`,
         lastModified: now,

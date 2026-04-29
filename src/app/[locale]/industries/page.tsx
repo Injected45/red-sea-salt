@@ -24,7 +24,7 @@ export default async function IndustriesPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
-  const products = getProducts();
+  const products = await getProducts();
 
   return (
     <>
