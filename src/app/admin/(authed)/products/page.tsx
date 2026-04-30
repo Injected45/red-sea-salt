@@ -15,8 +15,8 @@ export default async function AdminProductsPage() {
         </p>
       </header>
 
-      <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
-        <table className="w-full text-sm">
+      <div className="overflow-x-auto rounded-2xl border border-slate-200 bg-white">
+        <table className="w-full min-w-[640px] text-sm">
           <thead className="bg-slate-50 text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
             <tr>
               <th className="px-4 py-3">Order</th>
@@ -50,7 +50,7 @@ export default async function AdminProductsPage() {
                 <td className="px-4 py-3 text-right">
                   <Link
                     href={`/admin/products/${p.slug}/edit`}
-                    className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50"
+                    className="inline-flex items-center rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50"
                   >
                     Edit
                   </Link>

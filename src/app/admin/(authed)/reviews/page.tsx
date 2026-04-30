@@ -46,7 +46,7 @@ export default async function AdminReviewsPage({
         </p>
       </header>
 
-      <div className="mb-6 inline-flex rounded-xl border border-slate-200 bg-white p-1">
+      <div className="mb-6 flex flex-wrap gap-1 rounded-xl border border-slate-200 bg-white p-1">
         <TabLink href="/admin/reviews?tab=pending" active={isPending} count={pCount}>
           Pending
         </TabLink>
@@ -68,7 +68,7 @@ export default async function AdminReviewsPage({
               key={r.id}
               className="rounded-2xl border border-slate-200 bg-white p-5"
             >
-              <div className="flex items-start justify-between gap-4">
+              <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center gap-2">
                     <Stars rating={r.rating} />
@@ -110,7 +110,7 @@ function TabLink({
   return (
     <Link
       href={href}
-      className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition ${
+      className={`flex min-h-[40px] items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition ${
         active ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-50'
       }`}
     >

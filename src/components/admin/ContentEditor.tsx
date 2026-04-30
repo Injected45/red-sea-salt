@@ -137,8 +137,8 @@ export default function ContentEditor({ rows: initialRows }: { rows: ContentRow[
         </section>
       ))}
 
-      <div className="fixed inset-x-0 bottom-0 z-20 ml-60 border-t border-slate-200 bg-white/95 backdrop-blur-sm">
-        <div className="flex items-center justify-between gap-4 px-8 py-4">
+      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 backdrop-blur-sm md:ml-60">
+        <div className="flex items-center justify-between gap-4 px-4 py-3 sm:px-6 md:px-8 md:py-4">
           <div className="min-w-0 flex-1">
             {message ? (
               <p
@@ -160,7 +160,7 @@ export default function ContentEditor({ rows: initialRows }: { rows: ContentRow[
             type="button"
             onClick={onSave}
             disabled={pending || dirtyKeys.size === 0}
-            className="rounded-lg bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:opacity-60"
+            className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:opacity-60"
           >
             {pending ? 'Saving…' : 'Save changes'}
           </button>

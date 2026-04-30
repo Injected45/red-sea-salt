@@ -25,7 +25,7 @@ export default function ReviewActions({ id, status }: { id: number; status: 'pen
   };
 
   return (
-    <div className="flex flex-col items-end gap-2">
+    <div className="flex flex-col items-stretch gap-2 sm:items-end">
       <div className="flex gap-2">
         {status === 'pending' ? (
           <>
@@ -33,7 +33,7 @@ export default function ReviewActions({ id, status }: { id: number; status: 'pen
               type="button"
               onClick={() => run('approve')}
               disabled={pending}
-              className="rounded-lg bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-emerald-700 disabled:opacity-60"
+              className="rounded-lg bg-emerald-600 px-3 py-2.5 text-xs font-semibold text-white transition hover:bg-emerald-700 disabled:opacity-60"
             >
               Approve
             </button>
@@ -43,7 +43,7 @@ export default function ReviewActions({ id, status }: { id: number; status: 'pen
                 if (confirm('Permanently reject and delete this review?')) run('reject');
               }}
               disabled={pending}
-              className="rounded-lg border border-red-200 bg-white px-3 py-1.5 text-xs font-semibold text-red-700 transition hover:bg-red-50 disabled:opacity-60"
+              className="rounded-lg border border-red-200 bg-white px-3 py-2.5 text-xs font-semibold text-red-700 transition hover:bg-red-50 disabled:opacity-60"
             >
               Reject
             </button>
@@ -53,7 +53,7 @@ export default function ReviewActions({ id, status }: { id: number; status: 'pen
             type="button"
             onClick={() => run('unpublish')}
             disabled={pending}
-            className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-60"
+            className="rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-60"
           >
             Unpublish
           </button>

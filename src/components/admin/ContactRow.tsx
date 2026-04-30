@@ -39,7 +39,7 @@ export default function ContactRow({ contact }: { contact: Contact }) {
         contact.read ? 'border-slate-200' : 'border-sky-200 ring-1 ring-sky-100'
       }`}
     >
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             {!contact.read && (
@@ -99,7 +99,7 @@ export default function ContactRow({ contact }: { contact: Contact }) {
             type="button"
             onClick={toggleRead}
             disabled={pending}
-            className={`whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-semibold transition disabled:opacity-60 ${
+            className={`whitespace-nowrap rounded-lg px-3 py-2.5 text-xs font-semibold transition disabled:opacity-60 ${
               contact.read
                 ? 'border border-slate-300 bg-white text-slate-700 hover:bg-slate-50'
                 : 'bg-sky-600 text-white hover:bg-sky-700'

@@ -14,8 +14,8 @@ export default async function AuthedAdminLayout({
   return (
     <div className="min-h-screen">
       <Sidebar />
-      <main className="ml-60 min-h-screen">
-        <div className="mx-auto max-w-6xl px-8 py-8">{children}</div>
+      <main className="min-h-screen md:ml-60">
+        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 md:px-8 md:py-8">{children}</div>
       </main>
     </div>
   );

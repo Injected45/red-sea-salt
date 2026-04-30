@@ -14,6 +14,14 @@ const INDUSTRY_OPTIONS = [
 ];
 
 type FormState = ProductUpdate;
+type SourceKind = 'local' | 'remote' | 'empty';
+
+function classify(value: string): SourceKind {
+  if (!value) return 'empty';
+  if (/^https?:\/\//i.test(value)) return 'remote';
+  if (value.startsWith('/')) return 'local';
+  return 'empty';
+}
 
 function fromProduct(p: DbProduct): FormState {
   return {
@@ -73,7 +81,7 @@ export default function ProductEditForm({ product }: { product: DbProduct }) {
   };
 
   return (
-    <div className="space-y-8 pb-24">
+    <div className="space-y-8 pb-28 md:pb-24">
       {/* Basics */}
       <Section title="Basics">
         <div className="grid gap-4 sm:grid-cols-2">
@@ -106,7 +114,7 @@ export default function ProductEditForm({ product }: { product: DbProduct }) {
                   key={opt.value}
                   type="button"
                   onClick={() => toggleIndustry(opt.value)}
-                  className={`rounded-full border px-3 py-1 text-xs font-medium transition ${
+                  className={`min-h-[40px] rounded-full border px-3 py-2 text-xs font-medium transition ${
                     active
                       ? 'border-slate-900 bg-slate-900 text-white'
                       : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'
@@ -164,34 +172,95 @@ export default function ProductEditForm({ product }: { product: DbProduct }) {
 
       {/* Media */}
       <Section title="Media">
-        <Field label="Main image (relative path or URL)">
-          <input
+        <Field label="Main image">
+          <ImageSourceField
             value={state.image}
-            onChange={(e) => setState((s) => ({ ...s, image: e.target.value }))}
-            className="input"
+            originalValue={product.image}
+            onChange={(v) => setState((s) => ({ ...s, image: v }))}
+            kind="image"
           />
         </Field>
-        <Field label="Gallery (one path per line — first is the cover)">
-          <TextareaList
-            value={state.gallery}
-            onChange={(arr) => setState((s) => ({ ...s, gallery: arr }))}
-            rows={6}
-          />
-        </Field>
-        <Field label="Videos (one path per line)">
-          <TextareaList
-            value={state.videos}
-            onChange={(arr) => setState((s) => ({ ...s, videos: arr }))}
-            rows={4}
-          />
-        </Field>
+
+        <div>
+          <span className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Gallery (first item is the cover)
+          </span>
+          <div className="mt-2 space-y-3">
+            {state.gallery.map((item, idx) => (
+              <ImageSourceField
+                key={idx}
+                value={item}
+                originalValue={product.gallery[idx] ?? ''}
+                onChange={(v) =>
+                  setState((s) => {
+                    const next = [...s.gallery];
+                    next[idx] = v;
+                    return { ...s, gallery: next };
+                  })
+                }
+                onRemove={() =>
+                  setState((s) => ({
+                    ...s,
+                    gallery: s.gallery.filter((_, i) => i !== idx),
+                  }))
+                }
+                kind="image"
+              />
+            ))}
+            <button
+              type="button"
+              onClick={() => setState((s) => ({ ...s, gallery: [...s.gallery, ''] }))}
+              className="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg border border-dashed border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50"
+            >
+              + Add image
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <span className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Videos
+          </span>
+          <div className="mt-2 space-y-3">
+            {state.videos.map((item, idx) => (
+              <ImageSourceField
+                key={idx}
+                value={item}
+                originalValue={product.videos[idx] ?? ''}
+                onChange={(v) =>
+                  setState((s) => {
+                    const next = [...s.videos];
+                    next[idx] = v;
+                    return { ...s, videos: next };
+                  })
+                }
+                onRemove={() =>
+                  setState((s) => ({
+                    ...s,
+                    videos: s.videos.filter((_, i) => i !== idx),
+                  }))
+                }
+                kind="video"
+              />
+            ))}
+            <button
+              type="button"
+              onClick={() => setState((s) => ({ ...s, videos: [...s.videos, ''] }))}
+              className="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg border border-dashed border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50"
+            >
+              + Add video
+            </button>
+          </div>
+        </div>
+
         <Field label="Analysis image (optional)">
-          <input
+          <ImageSourceField
             value={state.analysisImage ?? ''}
-            onChange={(e) =>
-              setState((s) => ({ ...s, analysisImage: e.target.value.trim() || null }))
+            originalValue={product.analysisImage ?? ''}
+            onChange={(v) =>
+              setState((s) => ({ ...s, analysisImage: v.trim() ? v : null }))
             }
-            className="input"
+            kind="image"
           />
         </Field>
       </Section>
@@ -223,8 +292,8 @@ export default function ProductEditForm({ product }: { product: DbProduct }) {
       </Section>
 
       {/* Sticky save bar */}
-      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 backdrop-blur-sm ml-60">
-        <div className="flex items-center justify-between gap-4 px-8 py-4">
+      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-slate-200 bg-white/95 backdrop-blur-sm md:ml-60">
+        <div className="flex items-center justify-between gap-4 px-4 py-3 sm:px-6 md:px-8 md:py-4">
           <div className="min-w-0 flex-1">
             {message && (
               <p
@@ -240,7 +309,7 @@ export default function ProductEditForm({ product }: { product: DbProduct }) {
             type="button"
             onClick={onSave}
             disabled={pending}
-            className="rounded-lg bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:opacity-60"
+            className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:opacity-60"
           >
             {pending ? 'Saving…' : 'Save changes'}
           </button>
@@ -253,7 +322,7 @@ export default function ProductEditForm({ product }: { product: DbProduct }) {
           border-radius: 0.5rem;
           border: 1px solid rgb(203 213 225);
           background: white;
-          padding: 0.5rem 0.75rem;
+          padding: 0.625rem 0.75rem;
           font-size: 0.875rem;
           color: rgb(15 23 42);
         }
@@ -269,7 +338,7 @@ export default function ProductEditForm({ product }: { product: DbProduct }) {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-6">
+    <section className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6">
       <h2 className="font-display text-lg font-bold text-slate-900">{title}</h2>
       <div className="mt-5 space-y-4">{children}</div>
     </section>
@@ -311,6 +380,129 @@ function TextareaList({
       className="input"
       style={{ fontFamily: 'ui-monospace, SFMono-Regular, monospace', fontSize: '0.8125rem' }}
     />
+  );
+}
+
+function SourceBadge({ kind }: { kind: SourceKind }) {
+  const styles: Record<SourceKind, string> = {
+    local: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    remote: 'bg-sky-50 text-sky-700 border-sky-200',
+    empty: 'bg-slate-50 text-slate-500 border-slate-200',
+  };
+  const labels: Record<SourceKind, string> = {
+    local: 'Local file',
+    remote: 'External URL',
+    empty: '—',
+  };
+  return (
+    <span
+      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${styles[kind]}`}
+    >
+      {labels[kind]}
+    </span>
+  );
+}
+
+function ImagePreview({ value, kind }: { value: string; kind: 'image' | 'video' }) {
+  const [errored, setErrored] = useState(false);
+
+  if (kind === 'video') {
+    const filename = value ? value.split('/').pop() ?? value : '';
+    return (
+      <div className="flex h-24 w-24 shrink-0 flex-col items-center justify-center rounded-lg border border-slate-200 bg-slate-50 p-2 text-center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-slate-400">
+          <polygon points="5,3 19,12 5,21" />
+        </svg>
+        <span className="mt-1 line-clamp-2 break-all text-[10px] text-slate-600">
+          {filename || 'No video'}
+        </span>
+      </div>
+    );
+  }
+
+  if (!value || errored) {
+    return (
+      <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-lg border border-dashed border-slate-300 bg-slate-50">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-slate-400">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <circle cx="9" cy="9" r="2" />
+          <path d="M21 15l-5-5L5 21" />
+        </svg>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={value}
+      alt=""
+      onError={() => setErrored(true)}
+      onLoad={() => setErrored(false)}
+      className="h-24 w-24 shrink-0 rounded-lg border border-slate-200 bg-slate-50 object-cover"
+    />
+  );
+}
+
+function ImageSourceField({
+  value,
+  originalValue,
+  onChange,
+  onRemove,
+  kind,
+}: {
+  value: string;
+  originalValue: string;
+  onChange: (v: string) => void;
+  onRemove?: () => void;
+  kind: 'image' | 'video';
+}) {
+  const sourceKind = classify(value);
+  const isDirty = value !== originalValue;
+  const helperText =
+    kind === 'video'
+      ? 'Paste an https:// URL for a hosted video, or keep the local path to serve from /public.'
+      : 'Paste an https:// URL to use a public image, or keep the local path to serve from /public.';
+
+  return (
+    <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-3">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+        <ImagePreview value={value} kind={kind} />
+        <div className="min-w-0 flex-1 space-y-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <SourceBadge kind={sourceKind} />
+            {isDirty && originalValue && (
+              <button
+                type="button"
+                onClick={() => onChange(originalValue)}
+                className="text-[11px] font-semibold text-slate-600 underline-offset-2 hover:text-slate-900 hover:underline"
+              >
+                Reset to original
+              </button>
+            )}
+            {onRemove && (
+              <button
+                type="button"
+                onClick={onRemove}
+                aria-label="Remove this item"
+                className="ml-auto inline-flex h-7 w-7 items-center justify-center rounded-md text-slate-500 hover:bg-red-50 hover:text-red-700"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M6 6l12 12M6 18L18 6" />
+                </svg>
+              </button>
+            )}
+          </div>
+          <input
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder={kind === 'video' ? '/products/.../video.mp4 or https://...' : '/products/.../image.jpg or https://...'}
+            className="input"
+            style={{ fontFamily: 'ui-monospace, SFMono-Regular, monospace', fontSize: '0.8125rem' }}
+          />
+          <p className="text-[11px] text-slate-500">{helperText}</p>
+        </div>
+      </div>
+    </div>
   );
 }
 
